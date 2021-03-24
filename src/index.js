@@ -1,1 +1,1 @@
-var a = 1;
+console.log('hah，你好帅啊')
