@@ -1,15 +1,9 @@
-const Plugin = require('./plugin')
-module.exports = {
-    mode:'development',
-    module:{
-        rules:[
-            {
-                test:/\.js$/,
-                use:'./loader.js'
-            }
-        ]
-    },
-    plugins:[
-        new Plugin(),
-    ]
+
+module.exports =env =>  {
+    console.log(env,'this is for you koeb')
+    if(env&&env.pro ){
+        return require('./webpack.pro')
+    }else{
+        return require('./webpack.dev')
+    }
 }
