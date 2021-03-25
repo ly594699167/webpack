@@ -9,6 +9,20 @@ module.exports  = {
         path:path.resolve(__dirname,'dist'),
         filename:"practice/[name].[hash:5].js"
     },
+    module:{
+        // rules:[{
+        //     test:/\.(jpg)|(png)$/,
+        //     use:{
+        //         loader:'file-loader'
+        //     }
+        // }]
+        rules:[{
+            test:/\.(jpg)|(png)$/,
+            use:{
+                loader:'url-loader'
+            }
+        }]
+    },
     plugins:[
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
