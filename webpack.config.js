@@ -11,12 +11,15 @@ module.exports  = {
     },
     plugins:[
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template:'./public/index.html',
+            filename:'text.html'
+        }),
         new CopyPlugin({
             patterns:[
                 {
-                    from:'css',
-                    to:'css'
+                    from:'./public',
+                    to:'./',
                 }
             ]
         })
